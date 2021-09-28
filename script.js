@@ -4,7 +4,7 @@
 // @namespace   https://github.com/adelobosko/TrelloProgressBar
 // @match       https://trello.com/*
 // @grant       none
-// @version     1.1
+// @version     1.2
 // @author      Alexey Delobosko
 // @description Easy progress bar for list items, just enter: [33/100]
 // @description:ru Простой индикатор выполнения для элементов списка, просто введите: [33/100] 
@@ -34,17 +34,29 @@ function replaceCustomProgressBar(){
       }
     }
   }
+  
+  var descriptions = document.querySelectorAll(".description-content .js-desc");
+  for(var i = 0 ; i < descriptions.length; i++){
+    if (descriptions.hasOwnProperty(i)) {
+      var element = descriptions[i];
+      
+      var replacedInnerHtml = getReplacedInnerHtml(element.innerHTML);
+      if(replacedInnerHtml){
+        element.innerHTML = replacedInnerHtml;
+      }
+    }
+  }
 }
 
-function getReplacedInnerHtml(checklistInnerHtml){
-  var regexIterator = checklistInnerHtml.matchAll(progressRegex);
+function getReplacedInnerHtml(elementInnerHtml){
+  var regexIterator = elementInnerHtml.matchAll(progressRegex);
   let params = Array.from(regexIterator, function (x) { return x; });
   if(params.length === 0){
     return '';
   }
   
     
-  var result = checklistInnerHtml;
+  var result = elementInnerHtml;
   for(var i = 0; i < params.length; i++){
     if (params.hasOwnProperty(i)) {
       var matchParams = params[i];
@@ -56,7 +68,6 @@ function getReplacedInnerHtml(checklistInnerHtml){
       }
       
       var progressBarHtml = getProgressBarHtml(value, maxValue);
-      console.log(progressBarHtml);
       result = result.replace(match, progressBarHtml);
     }
   }
