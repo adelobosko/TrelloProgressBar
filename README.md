@@ -3,4 +3,4 @@ https://greasyfork.org/en/scripts/391787-di-fm-fu-updated-don-t-bug-me-digitally
 
 Violentmonkey progress bar script for Trello.com
 
-![Alt Text](progressBar.gif)
+![Progress bar example](progressBar.gif)
