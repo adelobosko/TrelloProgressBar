@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Trello easy progressbar [33/100]
 // @name:ru     Прогресс бар для Trello [33/100]
-// @namespace   https://github.com/adelobosko/DI.FM
+// @namespace   https://github.com/adelobosko/TrelloProgressBar
 // @match       https://trello.com/*
 // @grant       none
 // @version     1.0
