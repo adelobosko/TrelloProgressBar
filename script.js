@@ -13,7 +13,7 @@
 
 var interval = setInterval(replaceCustomProgressBar, 3000);
 
-// [539/1337]
+// [539/1337], [10/100]text
 const progressRegex = /\[(\d+)\/(\d+)\](\S+)?/g;
 
 
