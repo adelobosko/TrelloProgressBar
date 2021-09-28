@@ -4,7 +4,7 @@
 // @namespace   https://github.com/adelobosko/TrelloProgressBar
 // @match       https://trello.com/*
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      Alexey Delobosko
 // @description Easy progress bar for list items, just enter: [33/100]
 // @description:ru Простой индикатор выполнения для элементов списка, просто введите: [33/100] 
