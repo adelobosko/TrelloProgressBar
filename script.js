@@ -66,7 +66,7 @@ function getReplacedInnerHtml(checklistInnerHtml){
 
 
 function getProgressBarHtml(value, maxValue){
-  var percent = (Math.round(value * 100) / maxValue).toFixed(1);
+  var percent = value >= maxValue ? 100 : (Math.round(value * 100) / maxValue).toFixed(1);
   var completed = value >= maxValue ? 'checklist-progress-bar-current-complete' : '';
   
   var progressBarHtml = '<div class="checklist-progress">'
