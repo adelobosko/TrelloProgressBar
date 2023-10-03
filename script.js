@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name        Trello easy progressbar [33/100]
-// @name:ua     Прогресс бар для Trello [33/100]
+// @name        Trello easy progress bar [33/100]
+// @name:ua     Індикатор виконання для Trello (Easy Progress Bar [33/100])
 // @namespace   https://github.com/adelobosko/TrelloProgressBar
 // @match       https://trello.com/*
 // @grant       none
-// @version     1.4.4
+// @version     1.4.5
 // @author      Alex Dielobosko
 // @description Easy progress bar for list items, description, and title, just enter: [33/100] or [133/800]$
 // @description:ua Простий індекатор виконання для елементів списку, опису та назви, просто введіть: [33/100] або [133/800]$
