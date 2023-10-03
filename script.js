@@ -4,10 +4,10 @@
 // @namespace   https://github.com/adelobosko/TrelloProgressBar
 // @match       https://trello.com/*
 // @grant       none
-// @version     1.4
-// @author      Alexey Delobosko
-// @description Easy progress bar for list items, just enter: [33/100]
-// @description:ru Простой индикатор выполнения для элементов списка, просто введите: [33/100] 
+// @version     1.4.1
+// @author      Alex Dielobosko
+// @description Easy progress bar for list items, description, title, just enter: [33/100] or [133/800]$
+// @description:ua Простий індекатор виконання для елементів списку, опису та назви, просто введіть: [33/100] або [133/800]$
 // ==/UserScript==
 
 
@@ -51,7 +51,7 @@ function replaceCustomProgressBar(){
     }
 
     
-    var descriptions = document.querySelectorAll(".description-content .js-desc");
+    var descriptions = document.querySelectorAll(".js-fill-card-detail-desc .js-desc");
     for(var i = 0 ; i < descriptions.length; i++){
       if (descriptions.hasOwnProperty(i)) {
         var element = descriptions[i];
