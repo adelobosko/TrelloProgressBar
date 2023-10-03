@@ -107,7 +107,7 @@ function getProgressBarHtml(value, maxValue, type){
     + '<span class="checklist-progress-percentage">' + percent + '%</span>'
     + '<div class="checklist-progress-bar" style="height:12px;">'
       + '<div class="checklist-progress-bar-current checklist-progress-bar-current-delay ' + completed + '" style="width: ' + percent + '%;"></div>'
-      + '<span style="text-align: center;width: 100%;line-height: 10px;font-size: 11px;position: absolute;top: -1px;color: ' + (isCompleted ? 'var(--ds-text,#172b4d)' : '#010') + ';">' + value + ' / ' + maxValue + typeText + '</span>'
+      + '<span style="text-align: center;width: 100%;line-height: 10px;font-size: 11px;position: absolute;top: -1px;color: ' + (isCompleted ? '#010' : 'var(--ds-text,#172b4d)' ) + ';">' + value + ' / ' + maxValue + typeText + '</span>'
     + '</div>'
   + '</div>';
   
