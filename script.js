@@ -4,7 +4,7 @@
 // @namespace   https://github.com/adelobosko/TrelloProgressBar
 // @match       https://trello.com/*
 // @grant       none
-// @version     1.4.2
+// @version     1.4.3
 // @author      Alex Dielobosko
 // @description Easy progress bar for list items, description, and title, just enter: [33/100] or [133/800]$
 // @description:ua Простий індекатор виконання для елементів списку, опису та назви, просто введіть: [33/100] або [133/800]$
@@ -98,15 +98,16 @@ function getReplacedInnerHtml(elementInnerHtml){
 
 
 function getProgressBarHtml(value, maxValue, type){
-  var percent = value >= maxValue ? 100 : (Math.round(value * 100) / maxValue).toFixed(1);
-  var completed = value >= maxValue ? 'checklist-progress-bar-current-complete' : '';
+  var isCompleted = value >= maxValue;
+  var percent = isCompleted ? 100 : (Math.round(value * 100) / maxValue).toFixed(1);
+  var completed = isCompleted ? 'checklist-progress-bar-current-complete' : '';
   var typeText = type ? ' ' + type : '';
   
   var progressBarHtml = '<div class="checklist-progress">'
     + '<span class="checklist-progress-percentage">' + percent + '%</span>'
     + '<div class="checklist-progress-bar" style="height:12px;">'
       + '<div class="checklist-progress-bar-current checklist-progress-bar-current-delay ' + completed + '" style="width: ' + percent + '%;"></div>'
-      + '<span style="text-align: center;width: 100%;line-height: 10px;font-size: 11px;position: absolute;top: -1px;color: var(--ds-text,#172b4d);">' + value + ' / ' + maxValue + typeText + '</span>'
+      + '<span style="text-align: center;width: 100%;line-height: 10px;font-size: 11px;position: absolute;top: -1px;color: ' + (isCompleted ? 'var(--ds-text,#172b4d)' : '#010') + ';">' + value + ' / ' + maxValue + typeText + '</span>'
     + '</div>'
   + '</div>';
   
